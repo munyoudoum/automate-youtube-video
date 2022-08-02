@@ -63,12 +63,11 @@ def main():
     client_secrets_file = "client_secrets.json"
 
     # Get credentials and create an API client
-    flow = google_auth_oauthlib.flow.InstalledAppFlow.from_client_secrets_file(
-        client_secrets_file, scopes)
-    credentials = flow.run_console()
+    # flow = google_auth_oauthlib.flow.InstalledAppFlow.from_client_secrets_file(
+    #     client_secrets_file, scopes)
+    # credentials = flow.run_console()
     # print(credentials_to_dict(credentials))
-    # with open("credentials.json", "r") as f:
-    #     credentials = google.oauth2.credentials.Credentials(**json.load(f))
+    credentials = google.oauth2.credentials.Credentials(**json.loads(os.environ["GOOGLE_CREDENTIALS"]))
 
     youtube = googleapiclient.discovery.build(
         api_service_name, api_version, credentials=credentials
