@@ -79,6 +79,7 @@ def main():
             "snippet": {
                 "categoryId": "28",
                 "title": title,
+                "tags": ["automation", "youtube", "python", "youtube-api", "google-api", "api", "views", "thumbnail", "automate", "coding"],
             },
         },
     )
